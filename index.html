@@ -464,6 +464,7 @@
             //諏訪エリア-岡谷市 *完成*
             { id: 3, name: "山喜珈琲店", nameEn: "", region: "諏訪エリア", city: "岡谷市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/yamaki_coffee_/", onlineStoreUrl: "https://yamakicoffee.base.shop/", googleMapUrl: "https://maps.app.goo.gl/EPeTUrNzyxeo6AUJ6" },
             { id: 4, name: "自家焙煎珈琲てるてるぼ〜ず", nameEn: "", region: "諏訪エリア", city: "岡谷市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/bozu_t/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/57WxdVwsiNECf4Qf6" },
+            { id: 250, name: "COFFEE10", nameEn: "焙煎：Daichi Takai(八王子)", region: "諏訪エリア", city: "岡谷市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/coffee_10_japan/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/SUsPa8GmwJYNkZpW8" },
             //上伊那エリア-駒ヶ根市 *完成*
             { id: 5, name: "カフェグース", nameEn: "", region: "上伊那エリア", city: "駒ヶ根市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/cafe_goos_komagane/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/wPtssLQ4Kxvayy3W7" },
             { id: 6, name: "カントリーカフェ", nameEn: "", region: "上伊那エリア", city: "駒ヶ根市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "", onlineStoreUrl: "https://www.countrycafe.biz/", googleMapUrl: "https://maps.app.goo.gl/D89v8mKV8Xkp42Rb6" },
@@ -512,7 +513,7 @@
             { id: 40, name: "珈琲アウラ", nameEn: "coffee aura", region: "長野エリア", city: "長野市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/auracoffee_nagano/", onlineStoreUrl: "https://auracoffee.stores.jp/", googleMapUrl: "https://maps.app.goo.gl/yiwQb6iNiyxU41Lc7" },
             //松本エリア-松本市 *完成*
             { id: 41, name: "豆とコーヒー Laura (ローラ)", nameEn: "", region: "松本エリア", city: "松本市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/laura_coffee.matsumoto/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/YU8tZjpFf1P7mKCk8" },
-            { id: 42, name: "Alps coffee lAb.", nameEn: "", region: "", city: "", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/alps.coffee.lab/", onlineStoreUrl: "https://alps-coffee-lab.com/", googleMapUrl: "https://maps.app.goo.gl/E6QG5v6U5TDmbfwu9" },
+            { id: 42, name: "Alps coffee lAb.", nameEn: "", region: "松本エリア", city: "松本市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/alps.coffee.lab/", onlineStoreUrl: "https://alps-coffee-lab.com/", googleMapUrl: "https://maps.app.goo.gl/E6QG5v6U5TDmbfwu9" },
             { id: 43, name: "月詠珈琲", nameEn: "", region: "松本エリア", city: "松本市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/matsumoto_tsukuyomicoffee/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/5qrrXE7XNhvxxaUj7" },
             { id: 44, name: "koloro coffee", nameEn: "", region: "松本エリア", city: "松本市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/kolorocoffee/", onlineStoreUrl: "https://kolorocoffee.stores.jp/", googleMapUrl: "https://maps.app.goo.gl/Mcwjj6dsqznAb9Ru6" },
             { id: 45, name: "FIFTY-ONE COFFEE", nameEn: "", region: "松本エリア", city: "松本市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/fiftyone_coffee/", onlineStoreUrl: "http://51coffee.biz/index.html", googleMapUrl: "https://maps.app.goo.gl/a8kn874vqfxDBWf38" },
@@ -1011,10 +1012,40 @@
             const cafe = cafes.find(c => c.id === id);
             if (!cafe) return;
             
-            // リンク先の設定（データがあれば使用、なければダミーまたはデフォルト）
-            const instaLink = cafe.instagramUrl || "#";
-            const storeLink = cafe.onlineStoreUrl || "#";
+           // GoogleMapは基本的にある前提（なければ検索URL）
             const mapLink = cafe.googleMapUrl || `https://maps.google.com/?q=${encodeURIComponent(cafe.name + ' ' + cafe.city)}`;
+            
+            // --- ★ここから変更箇所 ---
+            
+            // 1. インスタグラムボタンのHTMLを作る（URLがある場合のみ）
+            let instagramBtn = '';
+            if (cafe.instagramUrl && cafe.instagramUrl !== "") {
+                instagramBtn = `
+                    <a href="${cafe.instagramUrl}" target="_blank" class="group relative flex items-center justify-center w-full px-8 py-4 border border-[#43342E] bg-transparent overflow-hidden transition-all duration-300 hover:shadow-md">
+                        <div class="absolute inset-0 w-full h-full bg-[#43342E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+                        <div class="relative flex items-center gap-3 z-10 text-[#43342E] group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                            <span class="text-[11px] tracking-[0.2em] font-bold eng-font">INSTAGRAM</span>
+                        </div>
+                    </a>
+                `;
+            }
+
+            // 2. オンラインストアボタンのHTMLを作る（URLがある場合のみ）
+            let onlineStoreBtn = '';
+            if (cafe.onlineStoreUrl && cafe.onlineStoreUrl !== "") {
+                onlineStoreBtn = `
+                    <a href="${cafe.onlineStoreUrl}" target="_blank" class="group relative flex items-center justify-center w-full px-8 py-4 border border-[#43342E] bg-transparent overflow-hidden transition-all duration-300 hover:shadow-md">
+                        <div class="absolute inset-0 w-full h-full bg-[#43342E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+                        <div class="relative flex items-center gap-3 z-10 text-[#43342E] group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                            <span class="text-[11px] tracking-[0.2em] font-bold eng-font">ONLINE STORE</span>
+                        </div>
+                    </a>
+                `;
+            }
+            
+            // --- ★ここまで変更箇所 ---
             
             modalContent.innerHTML = `
                 <div class="text-center mb-12 pt-8 px-4">
@@ -1045,25 +1076,11 @@
 
                         <div class="flex flex-col gap-4 mt-12 max-w-sm mx-auto font-sans">
                             
-                            <!-- INSTAGRAM BUTTON -->
-                            <a href="${instaLink}" target="_blank" class="group relative flex items-center justify-center w-full px-8 py-4 border border-[#43342E] bg-transparent overflow-hidden transition-all duration-300 hover:shadow-md">
-                                <div class="absolute inset-0 w-full h-full bg-[#43342E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                                <div class="relative flex items-center gap-3 z-10 text-[#43342E] group-hover:text-white transition-colors duration-300">
-                                    <i data-lucide="instagram" class="w-4 h-4"></i>
-                                    <span class="text-[11px] tracking-[0.2em] font-bold eng-font">INSTAGRAM</span>
-                                </div>
-                            </a>
+                           <!-- ★変数をここに埋め込む -->
+                            ${instagramBtn}
+                            ${onlineStoreBtn}
 
-                            <!-- ONLINE STORE BUTTON -->
-                            <a href="${storeLink}" target="_blank" class="group relative flex items-center justify-center w-full px-8 py-4 border border-[#43342E] bg-transparent overflow-hidden transition-all duration-300 hover:shadow-md">
-                                <div class="absolute inset-0 w-full h-full bg-[#43342E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-                                <div class="relative flex items-center gap-3 z-10 text-[#43342E] group-hover:text-white transition-colors duration-300">
-                                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                                    <span class="text-[11px] tracking-[0.2em] font-bold eng-font">ONLINE STORE</span>
-                                </div>
-                            </a>
-
-                            <!-- GOOGLE MAPS BUTTON -->
+                            <!-- GOOGLE MAPS BUTTON (常に表示) -->
                             <a href="${mapLink}" target="_blank" class="group relative flex items-center justify-center w-full px-8 py-4 border border-[#43342E] bg-transparent overflow-hidden transition-all duration-300 hover:shadow-md">
                                 <div class="absolute inset-0 w-full h-full bg-[#43342E] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                                 <div class="relative flex items-center gap-3 z-10 text-[#43342E] group-hover:text-white transition-colors duration-300">
