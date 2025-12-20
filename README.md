@@ -1,16 +1,28 @@
-## Hi there 👋
-#［COFFEEMAP NAGANO］(https://github.com/coffeemapnagano/coffeemapnagano) 
-<!--
-**coffeemapnagano/coffeemapnagano** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# 長野コーヒーマップ | Nagano Coffee Map
 
-Here are some ideas to get you started:
+長野県内の素晴らしいスペシャルティコーヒーショップや、こだわりの自家焙煎カフェをまとめたインタラクティブなガイドマップです。
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 🚀 サイトURL
+[https://coffeemapnagano.github.io/coffeemapnagano/](https://coffeemapnagano.github.io/coffeemapnagano/)
+
+## ✨ 主な機能
+- **エリア別カフェ検索**: 北信・中信・東信・南信など、長野県内各エリアのカフェを網羅。
+- **詳細情報表示**: 各店舗の特徴、おすすめポイント、アクセス情報を掲載。
+- **インタラクティブマップ**: 地図から直感的に近くのコーヒーショップを探すことが可能。
+- **モバイル対応**: 旅先やドライブ中でも、スマートフォンから手軽にチェック。
+
+## 🗺 使い方
+1. サイトにアクセスし、気になるエリアを選択します。
+2. 地図上のピンやリストから店舗を選択して詳細を確認します。
+3. あなたの今の気分にぴったりのコーヒーショップを見つけてください。
+
+## 🛠 使用技術
+- **React** (Vite)
+- **Tailwind CSS**
+- **Lucide React**
+- **GitHub Pages**
+
+## ⛰ 開発の背景
+豊かな自然と清らかな水に恵まれた長野県には、ハイレベルなコーヒーショップが数多く存在します。「信州の美しい景色と共に、最高の1杯を楽しんでほしい」という想いから、このマップを作成しました。
+
+---
