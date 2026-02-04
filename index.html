@@ -846,7 +846,22 @@
             const cafe = cafes.find(c => c.id === id);
             if (!cafe) return;
             
-            const mapLink = cafe.googleMapUrl || `https://maps.google.com/?q=${encodeURIComponent(cafe.name + ' ' + cafe.city)}`;
+            // 修正：マップボタンの表示制御を追加
+            // URLがある、または市町村名が空でない（実店舗である）場合のみボタンを作成
+            let mapBtn = '';
+            // cityデータが " " (空白) の場合もあるため trim() でチェックします
+            if ((cafe.googleMapUrl && cafe.googleMapUrl !== "") || (cafe.city && cafe.city.trim() !== "")) {
+                const mapLink = cafe.googleMapUrl || `https://maps.google.com/?q=${encodeURIComponent(cafe.name + ' ' + cafe.city)}`;
+                
+                mapBtn = `
+                    <a href="${mapLink}" target="_blank" class="flex items-center justify-between w-full p-4 bg-[#43342E] text-white hover:bg-[#2C2420] transition-colors group">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            <span class="text-xs font-bold tracking-widest eng-font">GOOGLE MAPS</span>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-white/50 group-hover:text-white"></i>
+                    </a>`;
+            }
             
             // ボタン生成
             let instagramBtn = '';
@@ -883,13 +898,7 @@
                 <div class="space-y-4 max-w-sm mx-auto pb-10">
                     ${instagramBtn}
                     ${onlineStoreBtn}
-                    <a href="${mapLink}" target="_blank" class="flex items-center justify-between w-full p-4 bg-[#43342E] text-white hover:bg-[#2C2420] transition-colors group">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            <span class="text-xs font-bold tracking-widest eng-font">GOOGLE MAPS</span>
-                        </div>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-white/50 group-hover:text-white"></i>
-                    </a>
+                    ${mapBtn}
                 </div>
             `;
             
@@ -900,7 +909,6 @@
 
         function closeModal() {
             elements.detailModal.classList.add('translate-y-full');
-            document.body.style.overflow = '';
         }
 
         // === モーダル: メニュー ===
