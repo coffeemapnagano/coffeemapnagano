@@ -1,0 +1,17 @@
+{
+  "name": "COFFEEMAP NAGANO",
+  "short_name": "COFFEEMAP",
+  "description": "長野県内のスペシャルティコーヒーショップや自家焙煎カフェを網羅したインタラクティブマップ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F9F8F4",
+  "theme_color": "#43342E",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%2343342E'/%3E%3Ctext x='256' y='300' text-anchor='middle' font-family='serif' font-size='240' fill='white'%3E珈%3C/text%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
