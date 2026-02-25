@@ -1,0 +1,160 @@
+/* ===========================================
+   COFFEEMAP NAGANO - Custom Styles
+   =========================================== */
+
+/* --- CSS変数 --- */
+:root {
+    --color-primary: #43342E;
+    --color-accent: #6B8E23;
+    --color-bg: #F9F8F4;
+    --color-card-bg: #FFFFFF;
+    --color-text-main: #3D3330;
+    --color-text-sub: #8D8075;
+    --color-border: #E6E2DD;
+    --shadow-soft: 0 4px 20px -2px rgba(67, 52, 46, 0.06);
+    --transition-base: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* --- ベースレイアウト --- */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    overflow-x: hidden;
+    width: 100%;
+    overscroll-behavior: none;
+}
+
+/* --- フォント --- */
+h1, h2, h3, .serif { font-family: 'Shippori Mincho', serif; }
+.eng-font { font-family: 'Cormorant Garamond', serif; }
+
+/* --- ビュー切り替え --- */
+.view-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+}
+.view-section.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- アニメーション --- */
+.fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- インタラクティブ要素 --- */
+.btn-touch { transition: transform 0.1s ease, background-color 0.2s; }
+.btn-touch:active { transform: scale(0.96); }
+
+/* --- モーダル --- */
+.slide-over-modal { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* --- スクロールバー非表示 --- */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* --- ローダー --- */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: var(--color-bg);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s ease;
+}
+
+/* --- お気に入りハート --- */
+.fav-btn { transition: transform 0.2s ease; cursor: pointer; }
+.fav-btn:active { transform: scale(1.3); }
+.fav-btn.active svg { fill: #E25555; stroke: #E25555; }
+
+/* --- カテゴリバッジ --- */
+.badge-default { border-color: #8D8075 !important; color: #8D8075 !important; }
+
+/* --- スクロールトップボタン --- */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 50;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+#scrollTopBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* --- フィルターチップ --- */
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    border: 1px solid var(--color-border);
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+.filter-chip.active {
+    border-color: var(--color-accent);
+    background: #F0F5E4;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+.filter-chip:hover { border-color: var(--color-primary); }
+
+/* --- カードアイコン --- */
+.card-icons { display: flex; gap: 6px; align-items: center; }
+.card-icons svg { width: 14px; height: 14px; color: #B8B0A8; }
+.card-icons .has-link { color: var(--color-accent); }
+
+/* --- フッター --- */
+.site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 32px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+    .view-section { padding-top: 70px; }
+}
