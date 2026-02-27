@@ -25,7 +25,7 @@
                 // ... (前回と同じデータ。長いので省略せずに全て出力する必要がありますが、
                 // ユーザー指示「ショップデータに変更を加えないで」に従い、
                 // ファイル生成時には元のデータをそのまま埋め込みます。
-                // ここでは実装の都合上、元のコードブロックと同じデータが入っているものとして扱います) ...total260shop
+                // ここでは実装の都合上、元のコードブロックと同じデータが入っているものとして扱います) ...total261shop
                 { id: 1, name: "Rowan Coffee Roasters", nameEn: "", region: "諏訪エリア", city: "原村", tags: ["自家焙煎", "スペシャルティ"], desc: "-", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/rowancoffeeroasters/", onlineStoreUrl: "https://rowancoffeeroasters.site/", googleMapUrl: "https://maps.app.goo.gl/33uee6vu68ntp5Kr6" },
                 { id: 2, name: "SUNNY COFFEE & ROASTERS", nameEn: "", region: "諏訪エリア", city: "原村", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/sunnycoffee_haramura/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/YT35xsaP7pUaJsQV8" },
                 { id: 256, name: "狼森珈琲", nameEn: "", region: "諏訪エリア", city: "原村", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/oinomori1925/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/38ApxUQ6PvGxrDTT9" },
@@ -284,5 +284,6 @@
                 { id: 257, name: "MORE", nameEn: "", region: "ONLINE、EVENT出店メイン", city: " ", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/more_coffee27/", onlineStoreUrl: "", googleMapUrl: "" },
                 { id: 258, name: "koti days", nameEn: "", region: "佐久エリア", city: "小諸市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/koti.days_komoro/", onlineStoreUrl: "", googleMapUrl: "https://maps.app.goo.gl/mSeWU5umTxHnw9Sx9" },
                 { id: 259, name: "ずくカフェ", nameEn: "", region: "ONLINE、EVENT出店メイン", city: "", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/zuku_cafe/", onlineStoreUrl: "https://www.zukucafe.com/", googleMapUrl: "" },
-                { id: 260, name: "TIMINGS Bake Shop Azumino", nameEn: "焙煎:CHOP COFFEE", region: "松本エリア", city: "安曇野市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/timings_bake_shop_azumino/", onlineStoreUrl: "http://timings-azumino.com/", googleMapUrl: "https://maps.app.goo.gl/RQ3Bmzf7gyzzYHYN7" }
+                { id: 260, name: "TIMINGS Bake Shop Azumino", nameEn: "焙煎:CHOP COFFEE", region: "松本エリア", city: "安曇野市", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/timings_bake_shop_azumino/", onlineStoreUrl: "http://timings-azumino.com/", googleMapUrl: "https://maps.app.goo.gl/RQ3Bmzf7gyzzYHYN7" },
+                { id: 259, name: "uni coffee stand", nameEn: "", region: "ONLINE、EVENT出店メイン", city: "", tags: ["自家焙煎", "スペシャルティ"], desc: "", hours: "-", closed: "-", address: "-", instagramUrl: "https://www.instagram.com/uni.coffee.stand/", onlineStoreUrl: "https://unicoffee-stand.com/", googleMapUrl: "" }
             ];
