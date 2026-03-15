@@ -457,6 +457,7 @@ document.addEventListener('keydown', (e) => {
         if (!elements.detailModal.classList.contains('translate-y-full')) { closeModal(); return; }
         if (!elements.cityModal.classList.contains('translate-y-full')) { closeCityModal(); return; }
         if (!elements.menuModal.classList.contains('pointer-events-none')) { closeMenuModal(); return; }
+        if (!document.getElementById('toolsModal').classList.contains('translate-y-full')) { closeToolsModal(); return; }
         if (!document.getElementById('aboutModal').classList.contains('translate-y-full')) { closeAboutModal(); return; }
         if (!document.getElementById('contactModal').classList.contains('translate-y-full')) { closeContactModal(); return; }
         if (!document.getElementById('privacyModal').classList.contains('translate-y-full')) { closePrivacyModal(); return; }
@@ -480,3 +481,6 @@ const closeContactModal = () => { document.getElementById('contactModal').classL
 
 const openPrivacyModal = () => { document.getElementById('privacyModal').classList.remove('translate-y-full'); document.body.style.overflow = 'hidden'; }
 const closePrivacyModal = () => { document.getElementById('privacyModal').classList.add('translate-y-full'); document.body.style.overflow = ''; }
+
+const openToolsModal = () => { document.getElementById('toolsModal').classList.remove('translate-y-full'); document.body.style.overflow = 'hidden'; }
+const closeToolsModal = () => { document.getElementById('toolsModal').classList.add('translate-y-full'); document.body.style.overflow = ''; }

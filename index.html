@@ -110,6 +110,12 @@
                         <span class="serif text-base tracking-widest font-medium">Google Mapで全店舗を見る</span>
                     </a>
 
+                    <button onclick="openToolsModal()"
+                        class="btn-touch w-full py-5 bg-white border border-[#E6E2DD] text-[#43342E] rounded-sm shadow-sm flex items-center justify-center gap-3 hover:border-[#43342E] transition-colors">
+                        <i data-lucide="wrench" class="w-4 h-4"></i>
+                        <span class="serif text-base tracking-widest font-medium">お役立ちツール</span>
+                    </button>
+
                     <button onclick="showFavorites()" id="favHomeBtn"
                         class="btn-touch w-full py-5 bg-white border border-[#E6E2DD] text-[#43342E] rounded-sm shadow-sm flex items-center justify-center gap-3 hover:border-[#43342E] transition-colors hidden">
                         <i data-lucide="heart" class="w-4 h-4 text-[#E25555]"></i>
@@ -210,6 +216,8 @@
                     class="serif text-2xl text-white font-medium hover:text-[#6B8E23] transition-colors">About</button>
                 <button onclick="closeMenuModal(); openContactModal();"
                     class="serif text-2xl text-white font-medium hover:text-[#6B8E23] transition-colors">Contact</button>
+                <button onclick="closeMenuModal(); openToolsModal();"
+                    class="serif text-2xl text-white font-medium hover:text-[#6B8E23] transition-colors">Tools</button>
                 <button onclick="closeMenuModal(); openPrivacyModal();"
                     class="serif text-xl text-white/60 font-medium hover:text-white transition-colors">Privacy
                     Policy</button>
@@ -347,6 +355,76 @@
             <p>当サイトに掲載されている情報の正確性には万全を期していますが、利用者が当サイトの情報を用いて行う一切の行為について、当サイトは責任を負いません。</p>
             <div class="pt-8 mt-8 border-t border-[#E6E2DD]">
                 <p class="text-right text-xs text-[#8D8075]">制定日：2025年11月30日</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- お役立ちツールモーダル -->
+    <div id="toolsModal"
+        class="fixed inset-0 z-[80] bg-[#FDFCF8] overflow-y-auto translate-y-full slide-over-modal flex flex-col">
+        <div
+            class="sticky top-0 bg-[#FDFCF8]/95 backdrop-blur z-20 border-b border-[#E6E2DD] px-4 py-3 flex justify-end">
+            <button onclick="closeToolsModal()" class="p-2 text-gray-500"><i data-lucide="x"
+                    class="w-6 h-6"></i></button>
+        </div>
+        <div class="p-8 container mx-auto max-w-2xl">
+            <p class="text-[11px] tracking-[0.3em] text-[#6B8E23] uppercase font-bold eng-font mb-4 text-center">Useful Tools</p>
+            <h2 class="text-2xl serif font-bold text-[#43342E] mb-3 text-center">お役立ちツール</h2>
+            <p class="text-sm text-[#8D8075] text-center mb-12 leading-relaxed">コーヒーをもっと楽しむための<br>便利なツールをご紹介します。</p>
+
+            <div class="space-y-6 max-w-md mx-auto">
+
+                <!-- Tool 1 -->
+                <a href="https://coffeemapnagano.github.io/customwatercalc/" target="_blank" rel="noopener noreferrer"
+                    class="block p-6 bg-white border border-[#E6E2DD] hover:border-[#43342E] transition-all group no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 flex-shrink-0 bg-[#F0F5E4] flex items-center justify-center rounded-full">
+                            <i data-lucide="droplets" class="w-5 h-5 text-[#6B8E23]"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="serif text-base font-bold text-[#43342E] group-hover:text-[#6B8E23] transition-colors">カスタムウォーター計算</h3>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-[#43342E] flex-shrink-0"></i>
+                            </div>
+                            <p class="text-xs text-[#8D8075] leading-relaxed">抽出に最適なカスタムウォーターの配合を計算できるツールです。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tool 2 -->
+                <a href="https://coffeemapnagano.github.io/pour-over-calculator/" target="_blank" rel="noopener noreferrer"
+                    class="block p-6 bg-white border border-[#E6E2DD] hover:border-[#43342E] transition-all group no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 flex-shrink-0 bg-[#F0F5E4] flex items-center justify-center rounded-full">
+                            <i data-lucide="flask-conical" class="w-5 h-5 text-[#6B8E23]"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="serif text-base font-bold text-[#43342E] group-hover:text-[#6B8E23] transition-colors">コーヒー抽出レシピ</h3>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-[#43342E] flex-shrink-0"></i>
+                            </div>
+                            <p class="text-xs text-[#8D8075] leading-relaxed">ハンドドリップの抽出レシピを組み立てられるツールです。</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tool 3 -->
+                <a href="https://coffeemapnagano.github.io/coffee-monitor/" target="_blank" rel="noopener noreferrer"
+                    class="block p-6 bg-white border border-[#E6E2DD] hover:border-[#43342E] transition-all group no-underline">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 flex-shrink-0 bg-[#F0F5E4] flex items-center justify-center rounded-full">
+                            <i data-lucide="bell-ring" class="w-5 h-5 text-[#6B8E23]"></i>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="serif text-base font-bold text-[#43342E] group-hover:text-[#6B8E23] transition-colors">オンラインストア更新チェック</h3>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-gray-300 group-hover:text-[#43342E] flex-shrink-0"></i>
+                            </div>
+                            <p class="text-xs text-[#8D8075] leading-relaxed">全国のコーヒーショップのオンラインストア更新をチェックできます。</p>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </div>
